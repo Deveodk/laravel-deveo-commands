@@ -2,7 +2,7 @@
 
 All notable changes to `laravel-deveo-commands` will be documented in this file
 
-## 1.0.12 - 2019-10-24
+## 1.0.2 - 2019-10-24
 
 - changed namespace for `tests/ExampleTest.php`
 
