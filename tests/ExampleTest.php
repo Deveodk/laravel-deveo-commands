@@ -1,6 +1,6 @@
 <?php
 
-namespace Deveodk\LaravelDeveoCommands\Tests;
+namespace Deveodk\DeveoCommands\Tests;
 
 use PHPUnit\Framework\TestCase;
 
