@@ -1,0 +1,53 @@
+{
+    "name": "deveodk/laravel-deveo-commands",
+    "description": "",
+    "keywords": [
+        "deveodk",
+        "laravel-deveo-commands"
+    ],
+    "homepage": "https://github.com/deveodk/laravel-deveo-commands",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Peter Brinck",
+            "email": "pb@deveo.dk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Deveodk\\DeveoCommands\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Deveodk\\DeveoCommands\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Deveodk\\DeveoCommands\\DeveoCommandsServiceProvider"
+            ],
+            "aliases": {
+                "DeveoCommands": "Deveodk\\DeveoCommands\\DeveoCommandsFacade"
+            }
+        }
+    }
+}
