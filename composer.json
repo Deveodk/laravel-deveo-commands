@@ -44,10 +44,7 @@
         "laravel": {
             "providers": [
                 "Deveodk\\DeveoCommands\\DeveoCommandsServiceProvider"
-            ],
-            "aliases": {
-                "DeveoCommands": "Deveodk\\DeveoCommands\\DeveoCommandsFacade"
-            }
+            ]
         }
     }
 }
