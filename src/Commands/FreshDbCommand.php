@@ -3,6 +3,7 @@
 namespace Deveodk\DeveoCommands\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Database\Console\Migrations\FreshCommand;
 use Illuminate\Support\Facades\Artisan;
 
 class FreshDbCommand extends Command
@@ -12,7 +13,7 @@ class FreshDbCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'deveo:fresh-db';
+    protected $signature = 'deveo:fresh-db {--F|force : Force migration}';
 
     /**
      * The console command description.
@@ -39,10 +40,20 @@ class FreshDbCommand extends Command
     public function handle()
     {
         $this->line('Clearing and seeding the database...');
-        Artisan::call('migrate:fresh --seed');
 
-        $this->line('Installing Passport...');
-        Artisan::call('passport:install');
+        $migrationFlags = [
+            '--seed' => true,
+        ];
+        if ($this->option('force')) {
+            $migrationFlags['--force'] = true;
+        }
+
+        Artisan::call(FreshCommand::class, $migrationFlags);
+
+        if (array_key_exists('Laravel\Passport\PassportServiceProvider', app()->getLoadedProviders())) {
+            $this->line('Installing Passport...');
+            Artisan::call('passport:install');
+        }
 
         $this->info('DONE! 🤘');
     }
