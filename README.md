@@ -21,6 +21,7 @@ It's just a more convenient way to run both in a single command.
 ``` bash
 php artisan deveo:fresh-db
 ```
+In production environments, you should add the `--force` flag, to force the migration to run.
 
 ### Testing
 
