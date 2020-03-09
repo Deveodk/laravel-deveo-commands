@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-deveo-commands` will be documented in this file
 
+## 1.2.0 - 2020-03-09
+
+- added Laravel 7.x support
+
 ## 1.1.0 - 2019-11-12
 
 - added `--force` (shortcut `-F`) option to `deveo:fresh-db` command
